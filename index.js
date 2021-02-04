@@ -417,14 +417,14 @@ ZipFile.prototype._readEntry = function() {
         }
       }
 
-      if (self.decodeStrings) {
-        if (!self.strictFileNames) {
-          // allow backslash
-          entry.fileName = entry.fileName.replace(/\\/g, "/");
-        }
-        var errorMessage = validateFileName(entry.fileName, self.validateFileNameOptions);
-        if (errorMessage != null) return emitErrorAndAutoClose(self, new Error(errorMessage));
-      }
+      //if (self.decodeStrings) {
+      //  if (!self.strictFileNames) {
+      //    // allow backslash
+      //    entry.fileName = entry.fileName.replace(/\\/g, "/");
+      //  }
+      //  var errorMessage = validateFileName(entry.fileName, self.validateFileNameOptions);
+      //  if (errorMessage != null) return emitErrorAndAutoClose(self, new Error(errorMessage));
+      //}
       self.emit("entry", entry);
 
       if (!self.lazyEntries) self._readEntry();
